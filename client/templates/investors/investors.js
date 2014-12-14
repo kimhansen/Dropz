@@ -57,8 +57,7 @@ Template.investors.events({
 
         Meteor.call('insertInvestor', investorInfo, function (error, result) {
             if (error) {
-                console.log("Error = " + error.reason);
-                return alert(error.reason);
+                return alert(error.details);
             } else {
                 console.log("Investor inserted");
             }
