@@ -39,8 +39,7 @@ Template.signin.events({
             // could be incorrect. Inform the user that their
             // login attempt has failed.
             else {
-                console.log("successful");
-                Router.go("takeyourpick");
+                Router.go("investors");
             }
 
             // The user has been logged in.
