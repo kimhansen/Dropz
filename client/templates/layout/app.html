@@ -1,0 +1,65 @@
+<template name="app">
+
+    {{> yield "top_navigation"}}
+
+    <div id="main-container">
+
+        <div class="padding-lg">
+            <div class="row">
+                {{> yield "content"}}
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.padding-lg -->
+
+    </div>
+    <!-- /.main-container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 padding-md">
+                    <p class="font-lg">About Dropz</p>
+
+                    <p>
+                        <small>
+                        </small>
+                    </p>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="font-lg">Useful Links</p>
+                    <ul class="list-unstyled useful-link">
+                        <li>
+                            <a href="#">
+                                <small><i class="fa fa-chevron-right"></i> Entrepreneur</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="font-lg">Stay Connected</p>
+                    <a href="#" class="social-connect tooltip-test facebook-hover pull-left m-right-xs"
+                       data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social-connect tooltip-test twitter-hover pull-left m-right-xs"
+                       data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social-connect tooltip-test linkedin-hover pull-left m-right-xs"
+                       data-toggle="tooltip" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 padding-md">
+                    <p class="font-lg">Contact Us</p>
+                    <br>
+                    Email : info@dropz.com
+                    <div class="seperator"></div>
+                    <!--<a class="btn btn-info"><i class="fa fa-envelope"></i> Contact support</a>-->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </footer>
+
+
+</template>

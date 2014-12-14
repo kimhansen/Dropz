@@ -1,0 +1,24 @@
+<template name="messages">
+    {{#if notificationTitle}}
+        {{#if messageType "info"}}
+            <div class="alert alert-info">
+                <strong>{{notificationTitle}}!</strong> {{notificationMessage}}
+            </div>
+        {{/if}}
+        {{#if messageType "success"}}
+            <div class="alert alert-success">
+                <strong>{{notificationTitle}}!</strong> {{notificationMessage}}
+            </div>
+        {{/if}}
+        {{#if messageType "warning"}}
+            <div class="alert alert-warning">
+                <strong>{{notificationTitle}}!</strong> {{notificationMessage}}
+            </div>
+        {{/if}}
+        {{#if messageType "error"}}
+            <div class="alert alert-danger">
+                <strong>{{notificationTitle}}!</strong> {{notificationMessage}}
+            </div>
+        {{/if}}
+    {{/if}}
+</template>
