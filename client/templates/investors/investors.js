@@ -45,13 +45,14 @@ Template.investors.events({
         var investorName = $("#investor_name").val();
         var investorEmail = $("#investor_email").val();
         var investorExpertise = $("#investor_expertise").val();
-        var investorInterested = $("#investor_interested").val();
+        var investorInterested = $("#investor_interested").is(":checked");
 
+        console.log("investorInterested = " + investorInterested);
         var investorInfo = {
             name: investorName,
             email: investorEmail,
             expertise: investorExpertise,
-            interested: Number(investorInterested == "on"),
+            interested: Number(investorInterested),
             status: 0
         };
 

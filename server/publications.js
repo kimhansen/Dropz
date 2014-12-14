@@ -1,3 +1,3 @@
 Meteor.publish('investors', function () {
-    return Investors.find();
+    return Investors.find({"userId": this.userId});
 });
