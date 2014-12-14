@@ -18,7 +18,7 @@ Template.investorRegistration.events({
 
                 var result = Meteor.users.update({_id: Meteor.user()._id}, {$set : {account_type: 'investor', startup: name}});
 
-                Router.go("investors");
+                Router.go("investorRegistrationThankyou");
             }
         });
 
