@@ -1,4 +1,4 @@
-<template name="registration">
+<template name="investorRegistration">
     <div class="login-wrapper">
         <div class="text-center">
             <h2 class="fadeInUp animation-delay10" style="font-weight:bold">
@@ -7,23 +7,30 @@
         </div>
         <div class="login-widget animation-delay1">
             <div class="panel panel-default">
-                <!--<div class="panel-heading">-->
-                    <!--<i class="fa fa-plus-circle fa-lg"></i> Sign up-->
-                <!--</div>-->
                 <div class="panel-body">
                     <form id="register-form" class="form-login" action="action">
                         <div class="form-group">
-                            <label>Startup name</label>
+                            <label>Name</label>
                             <input type="text" id="account-name"
                                    class="form-control input-sm bounceIn animation-delay2"/>
-                            <!--<input type="text" placeholder="Username" class="form-control input-sm bounceIn animation-delay2" >-->
                         </div>
+                        <div class="form-group">
+                            <label>Expertise</label>
+                            <input type="text" id="account-expertise"
+                                   class="form-control input-sm bounceIn animation-delay2"/>
+                        </div>
+                        <div class="checkbox">
+                            <label class="label-checkbox">
+                                <input type="checkbox" id="investor_interested" checked/>
+                                <span class="custom-checkbox"></span>
+                                Interested<br/>
+                            </label>
+                        </div><!-- /checkbox -->
                         <!-- /form-group -->
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" id="account-email"
                                    class="form-control input-sm bounceIn animation-delay2"/>
-                            <!--<input type="text" placeholder="Username" class="form-control input-sm bounceIn animation-delay2" >-->
                         </div>
                         <!-- /form-group -->
                         <div class="form-group">
@@ -31,7 +38,6 @@
 
                             <input type="password" id="account-password"
                                    class="form-control input-sm bounceIn animation-delay3"/>
-                            <!--<input type="password" placeholder="Password" class="form-control input-sm bounceIn animation-delay3">-->
                         </div>
 
                         <div class="seperator"></div>
@@ -47,8 +53,6 @@
                         <div class="form-group">
                             <div class="controls text-right">
                                 <input type="submit" id="create-account" value="Create an Account" class="btn btn-success btn-sm bounceIn animation-delay7 login-link"/>
-                                <!--<a id="submit-button" class="btn btn-success btn-sm bounceIn animation-delay7 login-link"-->
-                                   <!--href="#"><i class="fa fa-plus-circle"></i> Sign up</a>-->
                             </div>
                         </div>
                         <!-- /form-group -->

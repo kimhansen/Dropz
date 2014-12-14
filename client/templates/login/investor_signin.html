@@ -1,0 +1,65 @@
+<template name="investorSignin">
+    <div class="login-wrapper">
+        <div class="text-center">
+            <h2 class="fadeInUp animation-delay8" style="font-weight:bold">
+                <span class="text-success">Dropz</span> <span style="color:#ccc; text-shadow:0 1px #fff">Login</span>
+            </h2>
+        </div>
+        <div class="login-widget animation-delay1">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <div class="pull-left">
+                        <i class="fa fa-lock fa-lg"></i> Login
+                    </div>
+
+                    <div class="pull-right">
+                        <span style="font-size:11px;">Don't have any account?</span>
+                        <a class="btn btn-default btn-xs login-link" href="{{pathFor 'registration'}}" style="margin-top:-2px;"><i
+                                class="fa fa-plus-circle"></i> Sign up</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form id="login-form" class="form-login" action="action">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="login-email" class="form-control input-sm bounceIn animation-delay2"/>
+                            <!--<input type="text" placeholder="Username"-->
+                                   <!--class="form-control input-sm bounceIn animation-delay2">-->
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="login-password" class="form-control input-sm bounceIn animation-delay4"/>
+                            <!--<input type="password" placeholder="Password"-->
+                                   <!--class="form-control input-sm bounceIn animation-delay4">-->
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="label-checkbox inline">-->
+                                <!--<input type="checkbox" class="regular-checkbox chk-delete"/>-->
+                                <!--<span class="custom-checkbox info bounceIn animation-delay4"></span>-->
+                            <!--</label>-->
+                            <!--Remember me-->
+                        <!--</div>-->
+
+                        <!--<div class="seperator"></div>-->
+                        <!--<div class="form-group">-->
+                            <!--Forgot your password?<br/>-->
+                            <!--Click <a href="#">here</a> to reset your password-->
+                        <!--</div>-->
+
+                        <!--<hr/>-->
+                        <input type="submit" id="login-button" value="Sign in" class="btn btn-success btn-sm bounceIn animation-delay5 login-link pull-right"/>
+                        <!--<a id="signin" class="btn btn-success btn-sm bounceIn animation-delay5 login-link pull-right"-->
+                           <!--href="#"><i class="fa fa-sign-in"></i> Sign in</a>-->
+                    </form>
+                </div>
+            </div>
+
+            {{> messages}}
+
+            <!-- /panel -->
+        </div>
+
+        <!-- /login-widget -->
+    </div>
+    <!-- /login-wrapper -->
+</template>

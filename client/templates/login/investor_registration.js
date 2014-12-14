@@ -1,4 +1,4 @@
-Template.registration.events({
+Template.investorRegistration.events({
     'submit #register-form' : function(e, t) {
         e.preventDefault();
         var email = t.find('#account-email').value,
@@ -16,7 +16,7 @@ Template.registration.events({
             } else {
                 console.log("Successfully created user - " + result);
 
-                var result = Meteor.users.update({_id: Meteor.user()._id}, {$set : {account_type: 'admin', startup: name}});
+                var result = Meteor.users.update({_id: Meteor.user()._id}, {$set : {account_type: 'investor', startup: name}});
 
                 Router.go("investors");
             }
