@@ -2,6 +2,10 @@
 Template.investors.helpers({
     investors: function () {
         return Investors.find({}, {sort: {name: 1}});
+    },
+    getStartupInformation: function() {
+        var user = Meteor.user();
+        return user.startup;
     }
 });
 
@@ -22,6 +26,7 @@ Template.investorItem.helpers({
         return "-";
     }
 });
+
 
 Template.investors.events({
     "click #deleteButton": function () {

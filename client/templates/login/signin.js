@@ -1,24 +1,4 @@
 Template.signin.events({
-    'click #account-click': function (event) {
-        //console.dir(event);
-        //console.log("id = " + this.account);
-        Session.set("accountId", this.account);
-        //var account = Accounts.findOne(this.params._id);
-        //console.log("account")
-
-        Meteor.call('setSavedAccount', this.account, function (error, result) { // display the error to the user and abort
-            if (error) {
-                return alert(error.reason);
-            }
-        });
-
-        //getAccountDetails(this.account);
-    },
-    'click #refreshAccount': function (event) {
-        getAccountDetails(getSelectedAccountId());
-    },
-
-
     'submit #login-form': function (e, t) {
         e.preventDefault();
         // retrieve the input field values
@@ -46,5 +26,4 @@ Template.signin.events({
         });
         return false;
     }
-
 });

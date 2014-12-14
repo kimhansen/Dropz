@@ -20,3 +20,10 @@ Template.top_navigation.events({
         });
     }
 });
+
+Template.top_navigation.helpers({
+    user_information: function() {
+        var user = Meteor.user();
+        return user.startup;
+    }
+});
