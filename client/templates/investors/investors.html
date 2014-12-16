@@ -54,7 +54,24 @@
                     </label>
                 </div><!-- /checkbox -->
                 &nbsp;
-                <button type="submit" class="btn btn-sm btn-success">Insert investor</button>
+                <button type="button" id="insert_investor" class="btn btn-sm btn-success">Insert investor</button>
+            </form>
+        </div>
+    </div><!-- /panel -->
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Send email to investors</div>
+        <div class="panel-body">
+            <form class="form-inline no-margin">
+                <div class="form-group">
+                    <label class="sr-only">Subject</label>
+                    <input type="text" class="form-control input-sm" id="email_subject" placeholder="Subject">
+                </div><!-- /form-group -->
+                <div class="form-group">
+                    <label class="sr-only">Message</label>
+                    <input type="text" class="form-control input-sm" id="email_message" placeholder="Message">
+                </div><!-- /form-group -->
+                <button type="button" id="email_send" class="btn btn-sm btn-success">Send</button>
             </form>
         </div>
     </div><!-- /panel -->

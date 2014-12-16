@@ -3,7 +3,7 @@ Template.investors.helpers({
     investors: function () {
         return Investors.find({}, {sort: {name: 1}});
     },
-    getStartupInformation: function() {
+    getStartupInformation: function () {
         var user = Meteor.user();
         return user.startup;
     }
@@ -11,7 +11,7 @@ Template.investors.helpers({
 
 // Deal Item
 Template.investorItem.helpers({
-    getInterested: function() {
+    getInterested: function () {
         if (this.interested == 0) {
             return "Not interested";
         } else if (this.interested == 1) {
@@ -44,8 +44,9 @@ Template.investors.events({
         //    }
         //});
     },
-    'submit form': function (e) {
+    'click #insert_investor': function (e) {
         e.preventDefault();
+        console.log("subimt investor");
 
         var investorName = $("#investor_name").val();
         var investorEmail = $("#investor_email").val();
@@ -61,11 +62,33 @@ Template.investors.events({
             status: 0
         };
 
-        Meteor.call('insertInvestor', investorInfo, function (error, result) {
+        Meteor.call("insertInvestor", investorInfo, function (error, result) {
             if (error) {
                 return alert(error.details);
             } else {
                 console.log("Investor inserted");
+            }
+        });
+    },
+    'click #email_send': function (e) {
+        e.preventDefault();
+
+        console.log("subimt email send");
+        var emailSubject = $("#email_subject").val();
+        var emailMessage = $("#email_message").val();
+
+        var email = {
+            to: "kim@kwamecorp.com",
+            from: "kim@kwamecorp.com",
+            replyTo: "kim@kwamecorp.com",
+            subject: emailSubject,
+            text: emailMessage
+        };
+        Meteor.call("sendEmail", email, function (error, result) {
+            if (error) {
+                return alert(error.details);
+            } else {
+                console.log("Email sent");
             }
         });
     }
