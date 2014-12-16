@@ -12,12 +12,13 @@
             <table class="table table-striped" id="dataTable">
                 <thead>
                 <tr>
+                    <th class="col-xs-1 col-md-1 text-left">Select</th>
                     <th class="col-xs-2 col-md-2 text-left">Name</th>
                     <th class="col-xs-2 col-md-2 text-left">Email</th>
                     <th class="col-xs-2 col-md-2 text-left">Expertise</th>
                     <th class="col-xs-2 col-md-2 text-center">Interested</th>
                     <th class="col-xs-2 col-md-2 text-center">Status</th>
-                    <th class="col-xs-2 col-md-2 text-center">Delete</th>
+                    <th class="col-xs-1 col-md-1 text-center">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,27 +38,32 @@
                 <div class="form-group">
                     <label class="sr-only">Name</label>
                     <input type="text" class="form-control input-sm" id="investor_name" placeholder="Name">
-                </div><!-- /form-group -->
+                </div>
+                <!-- /form-group -->
                 <div class="form-group">
                     <label class="sr-only">Email address</label>
                     <input type="text" class="form-control input-sm" id="investor_email" placeholder="Email Address">
-                </div><!-- /form-group -->
+                </div>
+                <!-- /form-group -->
                 <div class="form-group">
                     <label class="sr-only">Expertise</label>
                     <input type="text" class="form-control input-sm" id="investor_expertise" placeholder="Expertise">
-                </div><!-- /form-group -->
+                </div>
+                <!-- /form-group -->
                 <div class="checkbox">
                     <label class="label-checkbox">
                         <input type="checkbox" id="investor_interested" checked/>
                         <span class="custom-checkbox"></span>
                         Interested<br/>
                     </label>
-                </div><!-- /checkbox -->
+                </div>
+                <!-- /checkbox -->
                 &nbsp;
                 <button type="button" id="insert_investor" class="btn btn-sm btn-success">Insert investor</button>
             </form>
         </div>
-    </div><!-- /panel -->
+    </div>
+    <!-- /panel -->
 
     <div class="panel panel-default">
         <div class="panel-heading">Send email to investors</div>
@@ -66,26 +72,33 @@
                 <div class="form-group">
                     <label class="sr-only">Subject</label>
                     <input type="text" class="form-control input-sm" id="email_subject" placeholder="Subject">
-                </div><!-- /form-group -->
+                </div>
+                <!-- /form-group -->
                 <div class="form-group">
                     <label class="sr-only">Message</label>
                     <input type="text" class="form-control input-sm" id="email_message" placeholder="Message">
-                </div><!-- /form-group -->
+                </div>
+                <!-- /form-group -->
                 <button type="button" id="email_send" class="btn btn-sm btn-success">Send</button>
             </form>
         </div>
-    </div><!-- /panel -->
+    </div>
+    <!-- /panel -->
 
 </template>
 
 <template name="investorItem">
     <tr>
+        <td class="col-xs-1 col-md-1 text-left"><input type="checkbox" id="investor_selected" value="{{email}}"/><span
+                class="custom-checkbox"></span></td>
         <td class="col-xs-2 col-md-2 text-left">{{name}}</td>
         <td class="col-xs-2 col-md-2 text-left">{{email}}</td>
         <td class="col-xs-2 col-md-2 text-left">{{expertise}}</td>
         <td class="col-xs-2 col-md-2 text-center">{{getInterested}}</td>
         <td class="col-xs-2 col-md-2 text-center">{{getStatus}}</td>
-        <td class="col-xs-2 col-md-2 text-center"><button type="button" id="deleteButton" class="btn btn-warning btn-xs">Delete investor</button></td>
+        <td class="col-xs-1 col-md-1 text-center">
+            <button type="button" id="deleteButton" class="btn btn-warning btn-xs">Delete investor</button>
+        </td>
     </tr>
 </template>
 

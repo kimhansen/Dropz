@@ -70,26 +70,34 @@ Template.investors.events({
             }
         });
     },
-    'click #email_send': function (e) {
-        e.preventDefault();
+    'click #email_send': function (event, template) {
+        event.preventDefault();
 
-        console.log("subimt email send");
         var emailSubject = $("#email_subject").val();
         var emailMessage = $("#email_message").val();
 
-        var email = {
-            to: "kim@kwamecorp.com",
-            from: "kim@kwamecorp.com",
-            replyTo: "kim@kwamecorp.com",
-            subject: emailSubject,
-            text: emailMessage
-        };
-        Meteor.call("sendEmail", email, function (error, result) {
-            if (error) {
-                return alert(error.details);
-            } else {
-                console.log("Email sent");
+        var selected = template.findAll( "input[type=checkbox]:checked");
+        for (var i = 0; i < selected.length; i++) {
+            if (selected[i].defaultValue != "") {
+                sendInvestorEmail(selected[i].defaultValue, emailSubject, emailMessage);
             }
-        });
+        }
     }
 });
+
+sendInvestorEmail = function(email, emailSubject, emailMessage) {
+    var email = {
+        to: email,
+        from: "kim@kwamecorp.com",
+        replyTo: "kim@kwamecorp.com",
+        subject: emailSubject,
+        text: emailMessage
+    };
+    Meteor.call("sendEmail", email, function (error, result) {
+        if (error) {
+            return alert(error.details);
+        } else {
+            console.log("Emails sent");
+        }
+    });
+};
